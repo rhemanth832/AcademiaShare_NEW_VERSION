@@ -1,4 +1,7 @@
 # Academia Share
+<img width="1873" height="854" alt="image" src="https://github.com/user-attachments/assets/7cb8e697-25d2-407d-90cb-30bdf0d61d4a" />
+<img width="1893" height="859" alt="image" src="https://github.com/user-attachments/assets/7a3d3e2e-b179-4b98-9dbb-691d5243010e" />
+
 
 A server-backed classroom application built with **React, Django, and SQLite**. Every account, class, folder, uploaded file, assignment, exam, grade, and notification is stored by Django. Users on different devices share the same server data.
 
