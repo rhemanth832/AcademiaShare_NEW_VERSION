@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DJANGO_ENV: production
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set DJANGO_SECRET_KEY in .env}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:?Set your public domain in .env}
+      DJANGO_CSRF_ORIGINS: ${DJANGO_CSRF_ORIGINS:?Set your HTTPS origin in .env}
+      DJANGO_TRUST_PROXY: "1"
+      PORT: "8000"
+    volumes:
+      - academia-data:/var/data
+volumes:
+  academia-data:

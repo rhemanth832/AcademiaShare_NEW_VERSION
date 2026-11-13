@@ -1,0 +1,30 @@
+# Requires a paid web service because SQLite and uploaded files need a persistent disk.
+# Review Render's current pricing before applying this Blueprint.
+services:
+  - type: web
+    name: academia-share
+    runtime: docker
+    region: singapore
+    plan: starter
+    numInstances: 1
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health/
+    autoDeployTrigger: "off"
+    disk:
+      name: academia-share-data
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: DJANGO_ENV
+        value: production
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_TRUST_PROXY
+        value: "1"
+      - key: ACADEMIA_DATA_DIR
+        value: /var/data
+      - key: ACADEMIA_SCHEDULER_REQUIRED
+        value: "1"
