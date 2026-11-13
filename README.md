@@ -5,8 +5,6 @@ A server-backed classroom application built with **React, Django, and SQLite**. 
 
 This version has no browser-demo backend, automatic sample login, account-switching shortcut, preloaded classes, or fake student results. A fresh installation starts empty. Each teacher and student creates an account and signs in normally.
 
-<img width="1893" height="859" alt="image" src="https://github.com/user-attachments/assets/7a3d3e2e-b179-4b98-9dbb-691d5243010e" />
-
 ## Start locally
 
 Install Python 3.10+ and Node.js 20.19+ or 22.12+, extract the source, and run:
@@ -36,6 +34,8 @@ Upload the extracted application to a repository you control, then connect that 
 Render supplies `RENDER_EXTERNAL_HOSTNAME`; Django uses it for host validation and trusted HTTPS origins. Its generated 256-bit base64 secret is expanded deterministically with SHA-256 for Django's key-length check. Set additional exact hostnames/origins for a custom domain. Never put secrets in source control.
 
 ## Features
+
+<img width="1893" height="859" alt="image" src="https://github.com/user-attachments/assets/7a3d3e2e-b179-4b98-9dbb-691d5243010e" />
 
 - Separate teacher and student registration/login, Django password hashing, server sessions, CSRF protection, profile changes, password changes, and sign out.
 - Teacher-owned classes, invite codes, membership checks, teacher student lists, and role-specific dashboards.
